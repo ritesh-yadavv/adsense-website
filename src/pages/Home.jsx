@@ -123,8 +123,8 @@ export default function Home() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {[
-                { num: '20+', label: 'Articles Published', icon: '📝' },
-                { num: '10K+', label: 'Monthly Readers', icon: '👥' },
+                { num: '1+', label: 'Articles Published', icon: '📝' },
+                { num: '3+', label: 'Monthly Readers', icon: '👥' },
                 { num: '4', label: 'Content Categories', icon: '🏷️' },
                 { num: '100%', label: 'Free Access', icon: '✨' },
               ].map((s, i) => (

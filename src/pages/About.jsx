@@ -3,8 +3,8 @@ import SEO from '../components/SEO'
 
 const stats = [
   { num: '1+', label: 'Articles Published', icon: '📝' },
-  { num: '10+', label: 'Monthly Readers', icon: '👥' },
-  { num: '10+', label: 'Countries Reached', icon: '🌍' },
+  { num: '3+', label: 'Monthly Readers', icon: '👥' },
+  { num: '1+', label: 'Countries Reached', icon: '🌍' },
   { num: '4.9', label: 'Average Rating', icon: '⭐' },
 ]
 

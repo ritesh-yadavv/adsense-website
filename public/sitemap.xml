@@ -1,200 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- ============ MAIN PAGES ============ -->
+  <!-- Main Pages -->
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://adsense-website.netlify.app/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/about</loc>
+    <loc>https://adsense-website.netlify.app/about</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog</loc>
+    <loc>https://adsense-website.netlify.app/blog</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/contact</loc>
+    <loc>https://adsense-website.netlify.app/contact</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- ============ LEGAL PAGES ============ -->
+  <!-- Legal Pages -->
   <url>
-    <loc>https://yourdomain.com/privacy-policy</loc>
+    <loc>https://adsense-website.netlify.app/privacy-policy</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://adsense-website.netlify.app/terms</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://adsense-website.netlify.app/disclaimer</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
+  <!-- Blog Articles -->
   <url>
-    <loc>https://yourdomain.com/terms</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://yourdomain.com/disclaimer</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- ============ BLOG ARTICLES ============ -->
-  <url>
-    <loc>https://yourdomain.com/blog/getting-started-with-react</loc>
+    <loc>https://adsense-website.netlify.app/blog/getting-started-with-react</loc>
     <lastmod>2024-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/seo-basics-for-beginners</loc>
+    <loc>https://adsense-website.netlify.app/blog/seo-basics-for-beginners</loc>
     <lastmod>2024-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/how-to-monetize-with-adsense</loc>
+    <loc>https://adsense-website.netlify.app/blog/how-to-monetize-with-adsense</loc>
     <lastmod>2024-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/how-to-start-a-blog-in-2024</loc>
+    <loc>https://adsense-website.netlify.app/blog/how-to-start-a-blog-in-2024</loc>
     <lastmod>2024-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/best-free-hosting-for-react-apps</loc>
+    <loc>https://adsense-website.netlify.app/blog/best-free-hosting-for-react-apps</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/understanding-jsx-in-react</loc>
+    <loc>https://adsense-website.netlify.app/blog/understanding-jsx-in-react</loc>
     <lastmod>2024-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/react-hooks-explained</loc>
+    <loc>https://adsense-website.netlify.app/blog/react-hooks-explained</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/top-10-seo-tools-2024</loc>
+    <loc>https://adsense-website.netlify.app/blog/top-10-seo-tools-2024</loc>
     <lastmod>2024-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/how-to-write-blog-post-that-ranks</loc>
+    <loc>https://adsense-website.netlify.app/blog/how-to-write-blog-post-that-ranks</loc>
     <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/make-money-online-with-blogging</loc>
+    <loc>https://adsense-website.netlify.app/blog/make-money-online-with-blogging</loc>
     <lastmod>2024-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/css-flexbox-complete-guide</loc>
+    <loc>https://adsense-website.netlify.app/blog/css-flexbox-complete-guide</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/understanding-git-github</loc>
+    <loc>https://adsense-website.netlify.app/blog/understanding-git-github</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/mobile-responsive-design-tips</loc>
+    <loc>https://adsense-website.netlify.app/blog/mobile-responsive-design-tips</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/what-is-google-adsense</loc>
+    <loc>https://adsense-website.netlify.app/blog/what-is-google-adsense</loc>
     <lastmod>2024-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/understanding-react-router</loc>
+    <loc>https://adsense-website.netlify.app/blog/understanding-react-router</loc>
     <lastmod>2024-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/how-to-choose-domain-name</loc>
+    <loc>https://adsense-website.netlify.app/blog/how-to-choose-domain-name</loc>
     <lastmod>2024-12-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/understanding-json-and-apis</loc>
+    <loc>https://adsense-website.netlify.app/blog/understanding-json-and-apis</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/why-website-speed-matters</loc>
+    <loc>https://adsense-website.netlify.app/blog/why-website-speed-matters</loc>
     <lastmod>2025-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/email-marketing-for-bloggers</loc>
+    <loc>https://adsense-website.netlify.app/blog/email-marketing-for-bloggers</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/top-programming-languages-2025</loc>
+    <loc>https://adsense-website.netlify.app/blog/top-programming-languages-2025</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://yourdomain.com/blog/adsense-approval-tips</loc>
+    <loc>https://adsense-website.netlify.app/blog/adsense-approval-tips</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

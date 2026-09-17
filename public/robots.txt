@@ -1,67 +1,10 @@
-# ============================================
-# robots.txt for TechInsider
-# ============================================
-
-# Allow all search engines
 User-agent: *
 Allow: /
 
-# Block private and admin areas
+# Block private areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
-Disallow: /dashboard/
-Disallow: /*.json$
-Disallow: /search?
 
-# Crawl delay (be polite to servers)
-Crawl-delay: 1
-
-# ============================================
-# Specific Search Engines
-# ============================================
-
-# Google
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-# Google Images
-User-agent: Googlebot-Image
-Allow: /
-
-# Bing
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-# Yandex
-User-agent: Yandex
-Allow: /
-Crawl-delay: 2
-
-# DuckDuckGo
-User-agent: DuckDuckBot
-Allow: /
-
-# ============================================
-# Block Bad Bots
-# ============================================
-
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Crawl-delay: 10
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-# ============================================
 # Sitemap
-# ============================================
-
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://adsense-website.netlify.app/sitemap.xml

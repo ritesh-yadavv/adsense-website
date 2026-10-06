@@ -4,12 +4,20 @@ import { useState } from 'react'
 export default function Footer() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleSubscribe = (e) => {
     e.preventDefault()
-    setSubscribed(true)
-    setEmail('')
-    setTimeout(() => setSubscribed(false), 3000)
+    if (!email) return
+    setLoading(true)
+
+    // Simulate subscribe — replace with real API later
+    setTimeout(() => {
+      setSubscribed(true)
+      setEmail('')
+      setLoading(false)
+      setTimeout(() => setSubscribed(false), 4000)
+    }, 800)
   }
 
   const socials = [
@@ -22,13 +30,21 @@ export default function Footer() {
         </svg>
       ),
     },
- 
     {
       name: 'YouTube',
       href: 'https://youtube.com',
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'LinkedIn',
+      href: 'https://linkedin.com',
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
       ),
     },
@@ -65,7 +81,7 @@ export default function Footer() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Newsletter Section */}
+      {/* ============ NEWSLETTER SECTION ============ */}
       <div className="relative border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -74,7 +90,8 @@ export default function Footer() {
                 Stay in the loop 📬
               </h3>
               <p className="text-slate-400">
-                Get the latest articles, tutorials and tips delivered straight to your inbox. No spam, ever.
+                Get the latest articles, tutorials and tips delivered straight to your inbox.
+                No spam, ever.
               </p>
             </div>
 
@@ -104,19 +121,20 @@ export default function Footer() {
               </div>
               <button
                 type="submit"
-                className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all whitespace-nowrap"
+                disabled={loading}
+                className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {subscribed ? '✅ Subscribed!' : 'Subscribe'}
+                {loading ? 'Subscribing...' : subscribed ? '✅ Subscribed!' : 'Subscribe'}
               </button>
             </form>
           </div>
         </div>
       </div>
 
-      {/* Main Footer */}
+      {/* ============ MAIN FOOTER ============ */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
-          {/* Brand — spans 2 cols on desktop */}
+          {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-5 group w-fit">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition">
@@ -213,17 +231,67 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg
+                  className="w-4 h-4 mt-0.5 flex-shrink-0 text-indigo-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
-                <a href="mailto:contact@techinsider.com" className="hover:text-indigo-400 transition break-all">
-                  contact@techinsider.com
+                {/* ✅ FIXED — matches Contact page */}
+                <a
+                  href="mailto:pujakumarijn41@gmail.com"
+                  className="hover:text-indigo-400 transition break-all"
+                >
+                  pujakumarijn41@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <svg
+                  className="w-4 h-4 mt-0.5 flex-shrink-0 text-indigo-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <a
+                  href="tel:+918004431753"
+                  className="hover:text-indigo-400 transition"
+                >
+                  +91 8004431753
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <svg
+                  className="w-4 h-4 mt-0.5 flex-shrink-0 text-indigo-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
                 </svg>
                 <span>India</span>
               </li>
@@ -232,16 +300,17 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* ============ BOTTOM BAR ============ */}
       <div className="relative border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
             <p className="text-slate-500">
               © {new Date().getFullYear()}{' '}
-              <span className="text-white font-semibold">TechInsider</span>. All rights reserved.
+              <span className="text-white font-semibold">TechInsider</span>. All rights
+              reserved.
             </p>
 
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               <span className="flex items-center gap-2 text-slate-500">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                 All systems operational
@@ -261,7 +330,12 @@ export default function Footer() {
         aria-label="Back to top"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2.5}
+            d="M5 15l7-7 7 7"
+          />
         </svg>
       </button>
     </footer>

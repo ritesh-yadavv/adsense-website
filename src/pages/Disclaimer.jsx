@@ -16,12 +16,14 @@ const sections = [
   { id: 'contact', title: 'Contact Us' },
 ]
 
+const LAST_UPDATED = 'January 1, 2025'
+
 export default function Disclaimer() {
   return (
     <>
       <SEO
         title="Disclaimer — TechInsider"
-        description="Read the Disclaimer for TechInsider. Important information about our content, accuracy and liability."
+        description="Read the Disclaimer for TechInsider. Important information about our content, accuracy, external links and liability."
         keywords="disclaimer, content disclaimer, affiliate disclaimer, AdSense disclaimer"
       />
 
@@ -53,7 +55,7 @@ export default function Disclaimer() {
             <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Last Updated: <strong className="text-slate-900">{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</strong>
+            Last Updated: <strong className="text-slate-900">{LAST_UPDATED}</strong>
           </div>
         </div>
       </section>
@@ -235,9 +237,7 @@ export default function Disclaimer() {
                       commission for any purchases made by you on the affiliate website using such
                       links. This comes at no additional cost to you.
                     </p>
-                    <p>
-                      Our affiliates include (but are not limited to):
-                    </p>
+                    <p>Our affiliates may include (but are not limited to):</p>
                     <ul>
                       <li>Amazon Associates</li>
                       <li>Impact Radius</li>
@@ -263,9 +263,7 @@ export default function Disclaimer() {
                       This website may display advertisements through Google AdSense and other
                       advertising networks. These ads help us keep our content free for all readers.
                     </p>
-                    <p>
-                      We want to make it clear that:
-                    </p>
+                    <p>We want to make it clear that:</p>
                     <ul>
                       <li>We do not control the content of the ads displayed on our site</li>
                       <li>We do not personally endorse every product or service shown in ads</li>
@@ -375,22 +373,6 @@ export default function Disclaimer() {
                       terms. If we update, amend or make any changes to this document, those changes
                       will be prominently posted here.
                     </p>
-                    <div className="bg-emerald-50 border-l-4 border-emerald-500 p-5 rounded-r-xl my-5">
-                      <div className="flex items-start gap-3">
-                        <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <div>
-                          <div className="font-bold text-emerald-900 mb-1">You're Good to Go!</div>
-                          <p className="text-emerald-800 m-0 text-sm">
-                            Thank you for reading our disclaimer. Now you can browse our site with
-                            full confidence and transparency.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
                   </section>
 
                   {/* 12. Contact */}
@@ -484,20 +466,27 @@ export default function Disclaimer() {
       {/* ============ FINAL CTA ============ */}
       <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-5xl mb-4">🎉</div>
+          <div className="text-5xl mb-4">🛡️</div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            All Legal Pages Complete!
+            Questions About This Disclaimer?
           </h2>
           <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-            Your website now has all the required legal pages for Google AdSense approval.
-            Let's continue building.
+            If anything here is unclear or you need more information, we're happy to help.
           </p>
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all"
-          >
-            📚 Explore Blog Articles →
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+            >
+              📬 Contact Us
+            </Link>
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-slate-800 font-semibold border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all"
+            >
+              📚 Browse Articles
+            </Link>
+          </div>
         </div>
       </section>
     </>

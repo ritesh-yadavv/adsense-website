@@ -20,13 +20,15 @@ const sections = [
   { id: 'contact', title: 'Contact Us' },
 ]
 
+const LAST_UPDATED = 'January 1, 2025'
+
 export default function Terms() {
   return (
     <>
       <SEO
         title="Terms & Conditions — TechInsider"
-        description="Read the Terms & Conditions governing the use of TechInsider website and services."
-        keywords="terms and conditions, user agreement, terms of service"
+        description="Read the Terms & Conditions governing the use of TechInsider website and services. Covers user rights, prohibited activities and limitations."
+        keywords="terms and conditions, user agreement, terms of service, TechInsider terms"
       />
 
       {/* ============ HERO ============ */}
@@ -57,7 +59,7 @@ export default function Terms() {
             <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Last Updated: <strong className="text-slate-900">{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</strong>
+            Last Updated: <strong className="text-slate-900">{LAST_UPDATED}</strong>
           </div>
         </div>
       </section>
@@ -165,9 +167,7 @@ export default function Terms() {
                       </span>
                       User Representations
                     </h2>
-                    <p>
-                      By using the Site, you represent and warrant that:
-                    </p>
+                    <p>By using the Site, you represent and warrant that:</p>
                     <ul>
                       <li>All registration information you submit will be true, accurate, current and complete</li>
                       <li>You will maintain the accuracy of such information and promptly update it as necessary</li>
@@ -304,9 +304,7 @@ export default function Terms() {
                       </span>
                       Site Management
                     </h2>
-                    <p>
-                      We reserve the right, but not the obligation, to:
-                    </p>
+                    <p>We reserve the right, but not the obligation, to:</p>
                     <ul>
                       <li>Monitor the Site for violations of these Terms and Conditions</li>
                       <li>Take appropriate legal action against anyone who violates the law or these Terms</li>
@@ -524,6 +522,33 @@ export default function Terms() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ FINAL CTA ============ */}
+      <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-5xl mb-4">📋</div>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Questions About These Terms?
+          </h2>
+          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+            If you have any questions about our Terms & Conditions, we're here to help.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+            >
+              📬 Contact Us
+            </Link>
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-slate-800 font-semibold border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all"
+            >
+              📚 Browse Articles
+            </Link>
           </div>
         </div>
       </section>

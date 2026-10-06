@@ -46,8 +46,8 @@ export default function Blog() {
     <>
       <SEO
         title="Blog — TechInsider"
-        description="Explore in-depth articles on web development, SEO, blogging and monetization. Fresh content published weekly."
-        keywords="web development blog, SEO tutorials, blogging guides, AdSense tips"
+        description="Explore in-depth articles on web development, SEO, blogging and monetization. Fresh content published weekly with practical guides and tutorials."
+        keywords="web development blog, SEO tutorials, blogging guides, AdSense tips, monetization guides"
       />
 
       {/* ============ HERO ============ */}
@@ -218,9 +218,9 @@ export default function Blog() {
                   <div className="absolute top-10 left-10 w-32 h-32 border-4 border-white rounded-full"></div>
                   <div className="absolute bottom-10 right-10 w-40 h-40 border-4 border-white rounded-3xl rotate-45"></div>
                 </div>
-                <div className="relative">
+                <div className="relative text-center">
                   <div className="text-white text-7xl md:text-8xl font-extrabold opacity-90 mb-3">
-                    {featuredPost.category.charAt(0)}
+                    {featuredPost?.category?.charAt(0) || '📝'}
                   </div>
                   <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider">
                     ⭐ Featured
@@ -230,34 +230,36 @@ export default function Blog() {
 
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <span className="inline-block px-3 py-1.5 bg-indigo-50 text-indigo-600 text-xs font-bold rounded-full mb-4 w-fit uppercase tracking-wider">
-                  {featuredPost.category}
+                  {featuredPost?.category}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight group-hover:text-indigo-600 transition">
-                  {featuredPost.title}
+                  {featuredPost?.title}
                 </h2>
-                <p className="text-slate-600 mb-6 leading-relaxed">{featuredPost.excerpt}</p>
+                <p className="text-slate-600 mb-6 leading-relaxed">{featuredPost?.excerpt}</p>
                 <div className="flex items-center gap-4 text-sm text-slate-500 pt-6 border-t border-slate-100">
                   <span className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white text-xs font-bold">
-                      {featuredPost.author.charAt(0)}
+                      {featuredPost?.author?.charAt(0) || 'A'}
                     </div>
-                    {featuredPost.author}
+                    {featuredPost?.author}
                   </span>
                   <span>•</span>
                   <span>
-                    {new Date(featuredPost.date).toLocaleDateString('en-US', {
+                    {new Date(featuredPost?.date).toLocaleDateString('en-US', {
                       month: 'short',
                       day: 'numeric',
                       year: 'numeric',
                     })}
                   </span>
+                  <span>•</span>
+                  <span>{featuredPost?.readTime || '5 min read'}</span>
                 </div>
               </div>
             </Link>
           )}
 
           {/* Ad */}
-          <AdBanner />
+          {restPosts.length > 0 && <AdBanner />}
 
           {/* Articles Grid */}
           {restPosts.length > 0 && (
@@ -270,17 +272,19 @@ export default function Blog() {
                 >
                   {/* Image */}
                   <div
-                    className={`relative h-48 bg-gradient-to-br ${gradientCombos[i % gradientCombos.length]} flex items-center justify-center overflow-hidden`}
+                    className={`relative h-48 bg-gradient-to-br ${
+                      gradientCombos[i % gradientCombos.length]
+                    } flex items-center justify-center overflow-hidden`}
                   >
                     <div className="absolute inset-0 opacity-20">
                       <div className="absolute top-4 left-4 w-16 h-16 border-2 border-white rounded-full"></div>
                       <div className="absolute bottom-4 right-4 w-24 h-24 border-2 border-white rounded-2xl rotate-12"></div>
                     </div>
                     <span className="relative text-white text-6xl font-extrabold opacity-90 group-hover:scale-110 transition-transform duration-300">
-                      {blog.category.charAt(0)}
+                      {blog?.category?.charAt(0) || '📄'}
                     </span>
                     <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full">
-                      {blog.category}
+                      {blog?.category}
                     </span>
                   </div>
 
@@ -316,7 +320,7 @@ export default function Blog() {
                             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                           />
                         </svg>
-                        5 min
+                        {blog.readTime || '5 min read'}
                       </span>
                     </div>
                   </div>

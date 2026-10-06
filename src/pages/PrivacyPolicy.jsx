@@ -15,13 +15,15 @@ const sections = [
   { id: 'contact', title: 'Contact Us' },
 ]
 
+const LAST_UPDATED = 'January 1, 2025'
+
 export default function PrivacyPolicy() {
   return (
     <>
       <SEO
         title="Privacy Policy — TechInsider"
-        description="Read TechInsider's Privacy Policy to understand how we collect, use and protect your personal information."
-        keywords="privacy policy, data protection, GDPR, CCPA, AdSense privacy"
+        description="Read TechInsider's Privacy Policy to understand how we collect, use and protect your personal information. Covers Google AdSense, cookies, GDPR and CCPA."
+        keywords="privacy policy, data protection, GDPR, CCPA, AdSense privacy, DART cookie"
       />
 
       {/* ============ HERO ============ */}
@@ -52,7 +54,7 @@ export default function PrivacyPolicy() {
             <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Last Updated: <strong className="text-slate-900">{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</strong>
+            Last Updated: <strong className="text-slate-900">{LAST_UPDATED}</strong>
           </div>
         </div>
       </section>
@@ -70,7 +72,7 @@ export default function PrivacyPolicy() {
                   </svg>
                   Contents
                 </h3>
-                <nav className="space-y-1">
+                <nav className="space-y-1 max-h-[70vh] overflow-y-auto">
                   {sections.map((s, i) => (
                     <a
                       key={s.id}
@@ -445,6 +447,33 @@ export default function PrivacyPolicy() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ FINAL CTA ============ */}
+      <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-5xl mb-4">🔒</div>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Your Privacy Matters
+          </h2>
+          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+            Have questions about how we handle your data? We're transparent and happy to explain.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+            >
+              📬 Contact Us
+            </Link>
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-slate-800 font-semibold border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all"
+            >
+              📚 Browse Articles
+            </Link>
           </div>
         </div>
       </section>
